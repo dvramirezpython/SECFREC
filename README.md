@@ -6,6 +6,8 @@ Secure platform for fingertip matching and hand motion recognition on the fly
 >
 > It implements an AI-powered pipeline
 > >
-> > Starting with a fine-tuned YOLOv11s model for phalange segmentation,
+> > Starting with a fine-tuned YOLOv11s model for phalange segmentation.
+> >
 > > Followed by a Pytorch implementation of FingerNet for fingerprint feature extraction.
+> >
 > It repeats the fingerphoto capture until a fingerprint with sufficient feature existence score is acquired.
