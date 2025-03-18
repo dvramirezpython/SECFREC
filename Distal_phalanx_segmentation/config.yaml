@@ -1,0 +1,52 @@
+# config.yaml
+
+video:
+  # source: "path_to_a_video_test_file"  # Replace with your video source
+  source: 0 # Use webcam
+  rescale_factor: 1.0
+
+image:
+  path_to_database: 'databases/ISPFDv2/ISPFDv2/bySetsAll' # Replace with your images folder
+  sample_set_array: ['N_O', 'N_I', 'Res16', 'Res8', 'Res5', 'W_I', 'W_O']  # Configure the set of source images
+  rescale_factor: 1.0
+  min_fp_quality: 0.15
+  max_steps: 6
+  yolo_size: [640,480]
+  fingernet_size: [640,640]
+  dpi: 500
+
+yolo_models:
+  fingerprint:
+    path: "weights/phalange_seg_model_v1.0.pt"
+    device: 0
+    conf_threshold: 0.3
+    iou: 0.0
+
+fingernet:
+  path: 'FingerNet_pytorch/models/fingernet.pth'
+  weights_only: True
+
+contrast:
+  min_percent: 5
+  max_percent: 95
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  handlers:
+    - console
+    - file
+  file:
+    path: "app.log"
+    mode: "a"
+
+performance:
+  enable_profiling: False
+
+mcc:
+  score_threshold: 0.019
+
+output:
+  path: 'output_fingerprints'
+
+
